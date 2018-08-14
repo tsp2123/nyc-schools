@@ -18,8 +18,8 @@ class School(db.Model): #Here we make our model
 
 @app.route("/")
 def hello():
-    return "Hello World!"
-
+	schools = School.query.all()
+	return render_template("list.html" , schools=schools)
 
 @app.route("/schools/")
 def schools():
